@@ -41,6 +41,10 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <connections>
+                                            <action selector="doneKeyPressed:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="fSl-5R-M0b"/>
+                                            <action selector="guessedLetterFieldChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="LaJ-PY-zQw"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFO-7h-jOd">
                                         <rect key="frame" x="42" y="0.0" width="145" height="30"/>
@@ -48,6 +52,9 @@
                                             <constraint firstAttribute="width" constant="145" id="da5-lr-iUy"/>
                                         </constraints>
                                         <state key="normal" title="Guess This Letter"/>
+                                        <connections>
+                                            <action selector="guessLetterButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FgA-fO-NZD"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -63,7 +70,13 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YH6-fe-0aR">
                                 <rect key="frame" x="142" y="382" width="130" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="RRV-Vt-Idh"/>
+                                </constraints>
                                 <state key="normal" title="Play Again"/>
+                                <connections>
+                                    <action selector="playAgainButttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uKe-D6-0gG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -73,18 +86,25 @@
                             <constraint firstItem="tis-xf-dyu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="CZE-ku-9FC"/>
                             <constraint firstItem="YFO-7h-jOd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="217" id="J7B-kq-q0e"/>
                             <constraint firstItem="dFh-Rv-WPi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nw5-RE-Nie"/>
-                            <constraint firstItem="YH6-fe-0aR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="142" id="dEO-Nf-5RB"/>
+                            <constraint firstItem="YH6-fe-0aR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X72-IX-zyl"/>
                             <constraint firstItem="tis-xf-dyu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="dM9-fL-5g6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="buy-Pj-GXx" secondAttribute="trailing" constant="20" id="gSr-Ek-JHx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tis-xf-dyu" secondAttribute="trailing" constant="20" id="hel-Ll-kZL"/>
                             <constraint firstItem="DSz-mi-D3b" firstAttribute="top" secondItem="tis-xf-dyu" secondAttribute="bottom" constant="52" id="jSa-ko-zWg"/>
                             <constraint firstItem="YH6-fe-0aR" firstAttribute="top" secondItem="buy-Pj-GXx" secondAttribute="bottom" constant="42.5" id="nGc-z9-cP3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YH6-fe-0aR" secondAttribute="trailing" constant="142" id="oLY-g5-iKB"/>
                             <constraint firstItem="DSz-mi-D3b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="q7a-Zr-L7u"/>
                             <constraint firstItem="buy-Pj-GXx" firstAttribute="top" secondItem="dFh-Rv-WPi" secondAttribute="bottom" constant="28" id="uru-pk-IrY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="flowerImageView" destination="eCY-IY-l7F" id="xJ5-xz-0Nh"/>
+                        <outlet property="guessCountLabel" destination="buy-Pj-GXx" id="dfq-tD-f6E"/>
+                        <outlet property="guessLetterButton" destination="YFO-7h-jOd" id="hoU-xF-cKA"/>
+                        <outlet property="guessedLetterField" destination="fJ5-qg-GPu" id="h6R-9B-QSi"/>
+                        <outlet property="playAgainButton" destination="YH6-fe-0aR" id="Ld1-bS-ef4"/>
+                        <outlet property="userGuessLabel" destination="DSz-mi-D3b" id="jsu-IV-u5H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
